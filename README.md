@@ -215,6 +215,41 @@ This event will be called if the player finished a jump. (Event will be ignored 
 ```Player getPlayer()```
 Get the player that triggered the event.
 
+##
+
+### PlayerFallEvent
+This event will be called if the player falls. (It's cancelled automatically if the player is in a jump instance. A jump instance is included when flying until you land).
+
+#### Methods
+
+```Player getPlayer()```
+Get the player that triggered the event.
+
+```boolean doesTakeFallDamage()```
+Check if the player could take fall damage. True by default.
+
+```takeFallDamage(boolean isDamaged)```
+Set if the player should take fall damage when they land.
+
+##
+
+### PlayerLandEvent
+This event will be called if the player lands a fall. (Does not interfere with PlayerCompleteJumpEvent and does not trigger in a jump instance. If the fall event is set for the player to not take damage, the damage method will ignore it).
+
+#### Methods
+
+```Player getPlayer()```
+Get the player that triggered the event.
+
+```Location landedAt()```
+Get the location where the player landed at.
+
+```double damageTaken()```
+Get how much damage the player took after falling.
+
+```setDamageTaken(double damage)```
+Set how much fall damage the player takes. It ignores the takeFallDamage(boolean isDamaged) method in PlayerFallEvent.
+
 ## Example Usage
 
 ```
