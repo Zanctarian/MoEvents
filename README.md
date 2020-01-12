@@ -23,6 +23,13 @@ You heard it right, the API does have configurable settings to adjust it to your
 - **PLAYER_AFK_KICK_ENABLED** (Change if you want to enable/disable AFK kicking. This does call the PlayerAFKKickEvent.)
 - **PLAYER_AFK_KICK_THESHOLD** (Change the delay (in seconds) when the player gets kicked. The timer starts after the player becomes AFK.)
 - **PLAYER_AFK_KICK_REASON** (Change the reason the player is kicked. You can do this in the kick event too, but this changes the default reason. Color codes are supported.)
+- **PLAYER_AFK_PING_MESSAGE** (Enable/disable being non-afk for sending a message.)
+- **PLAYER_AFK_PING_BLOCK_PLACE** (Enable/disable being non-afk for placing a block.)
+- **PLAYER_AFK_PING_BLOCK_BREAK** (Enable/disable being non-afk for breaking a block.)
+- **PLAYER_AFK_PING_INTERACTION** (Enable/disable being non-afk for clicking.)
+- **PLAYER_AFK_PING_ITEM_DROP** (Enable/disable being non-afk for dropping an item.)
+- **PLAYER_AFK_PING_INVENTORY_CLOSE** (Enable/disable being non-afk for closing an inventory.)
+- **PLAYER_AFK_PING_INVENTORY_OPEN** (Enable/disable being non-afk for opening an inventory.)
 
 Settings can be changed at any time while the plugin is running, but the best place to put them if you want to change just the default values is in your onEnable. If you want to change settings, input this line after the API initialization:
 ```MoEvents.getSettings().set(EVENT_SETTING, VALUE);```
@@ -32,6 +39,13 @@ If you don't know what value each setting is designed for, refer to this guide o
 - **PLAYER_AFK_KICK_ENABLED** -> Boolean
 - **PLAYER_AFK_KICK_THESHOLD** -> Integer
 - **PLAYER_AFK_KICK_REASON** -> String
+- **PLAYER_AFK_PING_MESSAGE** -> Boolean
+- **PLAYER_AFK_PING_BLOCK_PLACE** -> Boolean
+- **PLAYER_AFK_PING_BLOCK_BREAK** -> Boolean
+- **PLAYER_AFK_PING_INTERACTION** -> Boolean
+- **PLAYER_AFK_PING_ITEM_DROP** -> Boolean
+- **PLAYER_AFK_PING_INVENTORY_CLOSE** -> Boolean
+- **PLAYER_AFK_PING_INVENTORY_OPEN** -> Boolean
 
 For an example of changing some settings, here's an example onEnable:
 ```
@@ -113,6 +127,46 @@ Get the difference between the old and new locations. (Example: If a player move
 ```teleportPlayer(double x, double y, double z)```
 ```teleportPlayer(double x, double y, double z, float pitch, float yaw)```
 Teleport the player to set position in the same world on move.
+
+### PlayerEquipArmorEvent
+The event will be called if the player equips armor.
+
+#### Methods
+
+```Player getPlayer()```
+Get the player that triggered the event.
+
+```ArmorType getType()```
+Get the type of armor the has been equipped. (Helmet/Chestplate/Leggings/Boots)
+
+```ItemStack getArmorPiece()```
+Get the armor that has been equipped.
+
+```setArmorPiece(ItemStack armorPiece)```
+Set the armor as the armor piece.
+
+```EquipMethod getMethod()```
+Get how the player equipped the armor.
+
+### PlayerUnequipArmorEvent
+The event will be called if the player unequips armor.
+
+#### Methods
+
+```Player getPlayer()```
+Get the player that triggered the event.
+
+```ArmorType getType()```
+Get the type of armor the has been unequipped. (Helmet/Chestplate/Leggings/Boots)
+
+```ItemStack getArmorPiece()```
+Get the armor that has been unequipped.
+
+```setArmorPiece(ItemStack armorPiece)```
+Set the armor as the armor piece.
+
+```EquipMethod getMethod()```
+Get how the player unequipped the armor.
 
 ## Example Usage
 
