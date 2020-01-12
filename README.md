@@ -252,6 +252,23 @@ Set how much fall damage the player takes. It ignores the takeFallDamage(boolean
 
 ##
 
+### PlayerPingChangeEvent
+This event will be called if the player's ping changes.
+
+#### Methods
+
+```Player getPlayer()```
+Get the player that triggered the event.
+
+```int getOldPing()```
+Get the player's ping before it changed.
+
+```int getNewPing()```
+Get the player's ping after it changed. (Their current ping).
+
+
+##
+
 ### ServerTPSChangeEvent
 This event will be called if the TPS on the server changes from the last known value. Max at 20.
 
@@ -271,22 +288,6 @@ Get the TPS before the change but rounded to the hundredths place.
 
 ```double getNewTPSFormatted()```
 Get the TPS after the change (current TPS) but rounded to the hundredths place.
-
-##
-
-### PlayerPingChangeEvent
-This event will be called if the player's ping changes.
-
-#### Methods
-
-```Player getPlayer()```
-Get the player that triggered the event.
-
-```int getOldPing()```
-Get the player's ping before it changed.
-
-```int getNewPing()```
-Get the player's ping after it changed. (Their current ping).
 
 ## Example Usage
 
