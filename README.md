@@ -142,8 +142,7 @@ public class Core extends JavaPlugin implements Listener {
     }
       
     @EventHandler
-    public void onRTK(PlayerRTKEvent e)
-    {
+    public void onRTK(PlayerRTKEvent e) {
       e.getPlayer().sendMessage("You are no longer AFK!");
     }
   
