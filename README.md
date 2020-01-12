@@ -250,6 +250,28 @@ Get how much damage the player took after falling.
 ```setDamageTaken(double damage)```
 Set how much fall damage the player takes. It ignores the takeFallDamage(boolean isDamaged) method in PlayerFallEvent.
 
+##
+
+### ServerTPSChangeEvent
+This event will be called if the TPS on the server changes from the last known value. Max at 20.
+
+#### Methods
+
+```Server getServer()```
+Get the server the plugin is running on.
+
+```double getOldTPS()```
+Get the TPS before the change.
+
+```double getNewTPS()```
+Get the TPS after the change (current TPS).
+
+```double getOldTPSFormatted()```
+Get the TPS before the change but rounded to the hundredths place.
+
+```double getNewTPSFormatted()```
+Get the TPS after the change (current TPS) but rounded to the hundredths place.
+
 ## Example Usage
 
 ```
