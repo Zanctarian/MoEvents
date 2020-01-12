@@ -106,7 +106,7 @@ Get the player that triggered the event.
 ```int getSecondsAway()```
 Get the amount of time the player was AFK.
 
-### PlayerSyncMoveEvent
+### PlayerSyncMoveEvent (Cancellable)
 The event will be called if the player moves. (Refresh rate WILL be configurable).
 
 #### Methods
@@ -128,7 +128,7 @@ Get the difference between the old and new locations. (Example: If a player move
 ```teleportPlayer(double x, double y, double z, float pitch, float yaw)```
 Teleport the player to set position in the same world on move.
 
-### PlayerEquipArmorEvent
+### PlayerEquipArmorEvent (Cancellable)
 The event will be called if the player equips armor.
 
 #### Methods
@@ -148,7 +148,7 @@ Set the armor as the armor piece.
 ```EquipMethod getMethod()```
 Get how the player equipped the armor.
 
-### PlayerUnequipArmorEvent
+### PlayerUnequipArmorEvent (Cancellable)
 The event will be called if the player unequips armor.
 
 #### Methods
@@ -167,6 +167,31 @@ Set the armor as the armor piece.
 
 ```EquipMethod getMethod()```
 Get how the player unequipped the armor.
+
+### PlayerSwimEvent
+This event will be called if the player is swimming. (It is not a toggle event).
+
+#### Methods
+
+```Player getPlayer()```
+Get the player that triggered the event.
+
+```Block getBlock()```
+Get the water block the player is swimming in.
+
+```setBlock(Material material)```
+Set the block the player is swimming in.
+
+```LiquidType getType()```
+Get whether the block the player is swimming in is water, lava, or none.
+
+### PlayerJumpEvent (Cancellable)
+This event will be called if the player initiates a jump.
+
+#### Methods
+
+```Player getPlayer()```
+Get the player that triggered the event.
 
 ## Example Usage
 
