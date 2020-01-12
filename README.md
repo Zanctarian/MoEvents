@@ -30,6 +30,7 @@ You heard it right, the API does have configurable settings to adjust it to your
 - **PLAYER_AFK_PING_ITEM_DROP** (Enable/disable being non-afk for dropping an item.)
 - **PLAYER_AFK_PING_INVENTORY_CLOSE** (Enable/disable being non-afk for closing an inventory.)
 - **PLAYER_AFK_PING_INVENTORY_OPEN** (Enable/disable being non-afk for opening an inventory.)
+- **PLAYER_MOVE_EVENT_REFRESH_RATE** (Adjust the refresh rate in ticks for the PlayerSyncMoveEvent.)
 
 Settings can be changed at any time while the plugin is running, but the best place to put them if you want to change just the default values is in your onEnable. If you want to change settings, input this line after the API initialization:
 ```MoEvents.getSettings().set(EVENT_SETTING, VALUE);```
@@ -46,6 +47,7 @@ If you don't know what value each setting is designed for, refer to this guide o
 - **PLAYER_AFK_PING_ITEM_DROP** -> Boolean | ```Default Value: true```
 - **PLAYER_AFK_PING_INVENTORY_CLOSE** -> Boolean | ```Default Value: true```
 - **PLAYER_AFK_PING_INVENTORY_OPEN** -> Boolean | ```Default Value: true```
+- **PLAYER_MOVE_EVENT_REFRESH_RATE** -> Integer/Long | ```Default Value: 1L```
 
 For an example of changing some settings, here's an example onEnable:
 ```
@@ -115,7 +117,7 @@ Get the amount of time the player was AFK.
 ##
 
 ### PlayerSyncMoveEvent (Cancellable)
-The event will be called if the player moves. (Refresh rate WILL be configurable).
+The event will be called if the player moves. (Refresh rate IS configurable).
 
 #### Methods
 
@@ -212,7 +214,7 @@ Get the player that triggered the event.
 ##
 
 ### PlayerCompleteJumpEvent
-This event will be called if the player finished a jump.
+This event will be called if the player finished a jump. (Event will be ignored if PlayerJumpEvent is cancelled).
 
 #### Methods
 
