@@ -193,6 +193,14 @@ This event will be called if the player initiates a jump.
 ```Player getPlayer()```
 Get the player that triggered the event.
 
+### PlayerCompleteJumpEvent
+This event will be called if the player finished a jump.
+
+#### Methods
+
+```Player getPlayer()```
+Get the player that triggered the event.
+
 ## Example Usage
 
 ```
