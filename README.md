@@ -1,4 +1,4 @@
-# MoEvents
+# Mo' Events!
 Mo' Events is an upcoming API coded very strongly by myself. This API allows you to use more events in Spigot that may not have existed before. The API itself will not be uploaded on GitHub due to me selling it. However, this ReadME will serve as a guide to use it.
 
 ## How to Acquire the API
@@ -19,9 +19,9 @@ The variable "this" refers to the class JavaPlugin.
 
 ## API Settings
 You heard it right, the API does have configurable settings to adjust it to your need. All the current available settings are:
-- **PLAYER_AFK_THESHOLD** (Change the delay (in seconds) until the server recognizes a player to be AFK.)
+- **PLAYER_AFK_THRESHOLD** (Change the delay (in seconds) until the server recognizes a player to be AFK.)
 - **PLAYER_AFK_KICK_ENABLED** (Change if you want to enable/disable AFK kicking. This does call the PlayerAFKKickEvent.)
-- **PLAYER_AFK_KICK_THESHOLD** (Change the delay (in seconds) when the player gets kicked. The timer starts after the player becomes AFK.)
+- **PLAYER_AFK_KICK_THRESHOLD** (Change the delay (in seconds) when the player gets kicked. The timer starts after the player becomes AFK.)
 - **PLAYER_AFK_KICK_REASON** (Change the reason the player is kicked. You can do this in the kick event too, but this changes the default reason. Color codes are supported.)
 - **PLAYER_AFK_PING_MESSAGE** (Enable/disable being non-afk for sending a message.)
 - **PLAYER_AFK_PING_BLOCK_PLACE** (Enable/disable being non-afk for placing a block.)
@@ -35,17 +35,17 @@ Settings can be changed at any time while the plugin is running, but the best pl
 ```MoEvents.getSettings().set(EVENT_SETTING, VALUE);```
 
 If you don't know what value each setting is designed for, refer to this guide or the built in JavaDoc:
-- **PLAYER_AFK_THESHOLD** -> Integer
-- **PLAYER_AFK_KICK_ENABLED** -> Boolean
-- **PLAYER_AFK_KICK_THESHOLD** -> Integer
-- **PLAYER_AFK_KICK_REASON** -> String
-- **PLAYER_AFK_PING_MESSAGE** -> Boolean
-- **PLAYER_AFK_PING_BLOCK_PLACE** -> Boolean
-- **PLAYER_AFK_PING_BLOCK_BREAK** -> Boolean
-- **PLAYER_AFK_PING_INTERACTION** -> Boolean
-- **PLAYER_AFK_PING_ITEM_DROP** -> Boolean
-- **PLAYER_AFK_PING_INVENTORY_CLOSE** -> Boolean
-- **PLAYER_AFK_PING_INVENTORY_OPEN** -> Boolean
+- **PLAYER_AFK_THRESHOLD** -> Integer | ```Default Value: 180```
+- **PLAYER_AFK_KICK_ENABLED** -> Boolean | ```Default Value: false```
+- **PLAYER_AFK_KICK_THRESHOLD** -> Integer | ```Default Value: 60```
+- **PLAYER_AFK_KICK_REASON** -> String | ```Default Value: "&cYou have been kicked for being AFK!"```
+- **PLAYER_AFK_PING_MESSAGE** -> Boolean | ```Default Value: true```
+- **PLAYER_AFK_PING_BLOCK_PLACE** -> Boolean | ```Default Value: true```
+- **PLAYER_AFK_PING_BLOCK_BREAK** -> Boolean | ```Default Value: true```
+- **PLAYER_AFK_PING_INTERACTION** -> Boolean | ```Default Value: true```
+- **PLAYER_AFK_PING_ITEM_DROP** -> Boolean | ```Default Value: true```
+- **PLAYER_AFK_PING_INVENTORY_CLOSE** -> Boolean | ```Default Value: true```
+- **PLAYER_AFK_PING_INVENTORY_OPEN** -> Boolean | ```Default Value: true```
 
 For an example of changing some settings, here's an example onEnable:
 ```
@@ -54,7 +54,7 @@ public void onEnable() {
     MoEvents.init(this);
     
     //Set afk delay to 1 minute (60 seconds)
-    MoEvents.getSettings().set(MoEventsSettings.PLAYER_AFK_THESHOLD, 60);
+    MoEvents.getSettings().set(MoEventsSettings.PLAYER_AFK_THRESHOLD, 60);
     
     //Enable AFK kicking
     MoEvents.getSettings().set(MoEventsSettings.PLAYER_AFK_KICK_ENABLED, true);
@@ -178,7 +178,7 @@ public class Core extends JavaPlugin implements Listener {
         MoEvents.init(this);
         
         //Set afk delay to 1 minute (60 seconds)
-        MoEvents.getSettings().set(MoEventsSettings.PLAYER_AFK_THESHOLD, 60);
+        MoEvents.getSettings().set(MoEventsSettings.PLAYER_AFK_THRESHOLD, 60);
         
         //Enable AFK kicking
         MoEvents.getSettings().set(MoEventsSettings.PLAYER_AFK_KICK_ENABLED, true);
