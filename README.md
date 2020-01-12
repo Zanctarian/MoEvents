@@ -64,6 +64,8 @@ public void onEnable() {
 ## List of Supported Events
 This list will cover supported events and a basic description of them.
 
+##
+
 ### PlayerAFKEvent
 The event will be called if the player goes AFK. (Delay is configurable).
 
