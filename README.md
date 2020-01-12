@@ -75,7 +75,7 @@ Get the player that triggered the event.
 ```kickPlayer(String reason)```
 Kick the afk player from the server. Color codes supported.
 
-### PlayerAFKKickEvent
+### PlayerAFKKickEvent (Cancellable)
 The event will be called if the player gets kicked for being AFK. (Delay, enable/disable, and reason for kicking is configurable).
 
 #### Methods
