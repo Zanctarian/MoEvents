@@ -19,19 +19,19 @@ The variable "this" refers to the class JavaPlugin.
 
 ## API Settings
 You heard it right, the API does have configurable settings to adjust it to your need. All the current available settings are:
-- PLAYER_AFK_THESHOLD (Change the delay (in seconds) until the server recognizes a player to be AFK.)
-- PLAYER_AFK_KICK_ENABLED (Change if you want to enable/disable AFK kicking. This does call the PlayerAFKKickEvent.)
-- PLAYER_AFK_KICK_THESHOLD (Change the delay (in seconds) when the player gets kicked. The timer starts after the player becomes AFK.)
-- PLAYER_AFK_KICK_REASON (Change the reason the player is kicked. You can do this in the kick event too, but this changes the default reason. Color codes are supported.)
+- **PLAYER_AFK_THESHOLD** (Change the delay (in seconds) until the server recognizes a player to be AFK.)
+- **PLAYER_AFK_KICK_ENABLED** (Change if you want to enable/disable AFK kicking. This does call the PlayerAFKKickEvent.)
+- **PLAYER_AFK_KICK_THESHOLD** (Change the delay (in seconds) when the player gets kicked. The timer starts after the player becomes AFK.)
+- **PLAYER_AFK_KICK_REASON** (Change the reason the player is kicked. You can do this in the kick event too, but this changes the default reason. Color codes are supported.)
 
 Settings can be changed at any time while the plugin is running, but the best place to put them if you want to change just the default values is in your onEnable. If you want to change settings, input this line after the API initialization:
 ```MoEvents.getSettings().set(EVENT_SETTING, VALUE);```
 
 If you don't know what value each setting is designed for, refer to this guide or the built in JavaDoc:
-- PLAYER_AFK_THESHOLD -> Integer
-- PLAYER_AFK_KICK_ENABLED -> Boolean
-- PLAYER_AFK_KICK_THESHOLD -> Integer
-- PLAYER_AFK_KICK_REASON -> String
+- **PLAYER_AFK_THESHOLD** -> Integer
+- **PLAYER_AFK_KICK_ENABLED** -> Boolean
+- **PLAYER_AFK_KICK_THESHOLD** -> Integer
+- **PLAYER_AFK_KICK_REASON** -> String
 
 For an example of changing some settings, here's an example onEnable:
 ```
