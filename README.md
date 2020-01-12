@@ -12,7 +12,7 @@ Once you got the jar imported and ready to go, you only need to add one line to 
 so that will look something like..
 ```
 public void onEnable() {
-  MoEvents.init(this);
+    MoEvents.init(this);
 }
 ```
 The variable "this" refers to the class JavaPlugin.
@@ -36,14 +36,14 @@ If you don't know what value each setting is designed for, refer to this guide o
 For an example of changing some settings, here's an example onEnable:
 ```
 public void onEnable() {
-  //Initialize the API
-  MoEvents.init(this);
-  
-  //Set afk delay to 1 minute (60 seconds)
-  MoEvents.getSettings().set(MoEventsSettings.PLAYER_AFK_THESHOLD, 60);
-  
-  //Enable AFK kicking
-  MoEvents.getSettings().set(MoEventsSettings.PLAYER_AFK_KICK_ENABLED, true);
+    //Initialize the API
+    MoEvents.init(this);
+    
+    //Set afk delay to 1 minute (60 seconds)
+    MoEvents.getSettings().set(MoEventsSettings.PLAYER_AFK_THESHOLD, 60);
+    
+    //Enable AFK kicking
+    MoEvents.getSettings().set(MoEventsSettings.PLAYER_AFK_KICK_ENABLED, true);
 }
 ```
 
@@ -119,34 +119,33 @@ Teleport the player to set position in the same world on move.
 ```
 public class Core extends JavaPlugin implements Listener {
   
-  public void onEnable() {
-    //Initialize the API
-    MoEvents.init(this);
+    public void onEnable() {
+        //Initialize the API
+        MoEvents.init(this);
+        
+        //Set afk delay to 1 minute (60 seconds)
+        MoEvents.getSettings().set(MoEventsSettings.PLAYER_AFK_THESHOLD, 60);
+        
+        //Enable AFK kicking
+        MoEvents.getSettings().set(MoEventsSettings.PLAYER_AFK_KICK_ENABLED, true);
     
-    //Set afk delay to 1 minute (60 seconds)
-    MoEvents.getSettings().set(MoEventsSettings.PLAYER_AFK_THESHOLD, 60);
-    
-    //Enable AFK kicking
-    MoEvents.getSettings().set(MoEventsSettings.PLAYER_AFK_KICK_ENABLED, true);
-    
-    //Change the kick reason
-    MoEvents.getSettings().set(MoEventsSettings.PLAYER_AFK_KICK_REASON, "&cKicked due to being AFK!");
-    
-    //Register listener
-    getServer().getPluginManager().registerEvents(this, this);
-  }
-  
-  @EventHandler
-  public void onAFK(PlayerAFKEvent e)
-  {
-    e.getPlayer().sendMessage("You are now AFK!");
-  }
-  
-  @EventHandler
-  public void onRTK(PlayerRTKEvent e)
-  {
-    e.getPlayer().sendMessage("You are no longer AFK!");
-  }
+        //Change the kick reason
+        MoEvents.getSettings().set(MoEventsSettings.PLAYER_AFK_KICK_REASON, "&cKicked due to being AFK!");
+        
+        //Register listener
+        getServer().getPluginManager().registerEvents(this, this);
+    }
+      
+    @EventHandler
+    public void onAFK(PlayerAFKEvent e) {
+        e.getPlayer().sendMessage("You are now AFK!");
+    }
+      
+    @EventHandler
+    public void onRTK(PlayerRTKEvent e)
+    {
+      e.getPlayer().sendMessage("You are no longer AFK!");
+    }
   
 }
 ```
