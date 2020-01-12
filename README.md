@@ -13,7 +13,8 @@ so that will look something like..
 ```
 public void onEnable() {
   MoEvents.init(this);
-}```
+}
+```
 The variable "this" refers to the class JavaPlugin.
 
 ## API Settings
@@ -43,13 +44,75 @@ public void onEnable() {
   
   //Enable AFK kicking
   MoEvents.getSettings().set(MoEventsSettings.PLAYER_AFK_KICK_ENABLED, true);
-}```
+}
+```
 
 ## List of Supported Events
-- PlayerAFKEvent (If the player goes AFK)
-- PlayerAFKKickEvent (If the player gets kicked for being AFK)
-- PlayerRTKEvent (If the player returns to the keyboard (no longer AFK))
-- PlayerSyncMoveEvent (A less laggier version of PlayerMoveEvent by putting it on a timer)
+This list will cover supported events and a basic description of them.
+
+### PlayerAFKEvent
+The event will be called if the player goes AFK. (Delay is configurable).
+
+#### Methods
+
+```Player getPlayer()```
+Get the player that triggered the event.
+
+```kickPlayer(String reason)```
+Kick the afk player from the server. Color codes supported.
+
+### PlayerAFKKickEvent
+The event will be called if the player gets kicked for being AFK. (Delay, enable/disable, and reason for kicking is configurable).
+
+#### Methods
+
+```Player getPlayer()```
+Get the player that triggered the event.
+
+```setReason(String reason)```
+Set the reason for why the player got kicked. Color codes supported.
+
+```String getReason()```
+Get the reason for the player being kicked.
+
+```setCancelled(boolean cancel)```
+Cancel the player from being kicked.
+
+```isCancelled()```
+Check if the event is cancelled.
+
+### PlayerRTKEvent
+The event will be called if the player is not longer AFK.
+
+#### Methods
+
+```Player getPlayer()```
+Get the player that triggered the event.
+
+```int getSecondsAway()```
+Get the amount of time the player was AFK.
+
+### PlayerSyncMoveEvent
+The event will be called if the player moves. (Refresh rate WILL be configurable).
+
+#### Methods
+
+```Player getPlayer()```
+Get the player that triggered the event.
+
+```Location getOldLocation()```
+Get the last location of the player before they moved.
+
+```Location getNewLocation()```
+Get the player's current location.
+
+```Location getLocationDifference()```
+Get the difference between the old and new locations. (Example: If a player moved 1 block on the x axis, but not on the Y or Z. The coordinates will be 1,0,0).
+
+```teleportPlayer(Location location)```
+```teleportPlayer(double x, double y, double z)```
+```teleportPlayer(double x, double y, double z, float pitch, float yaw)```
+Teleport the player to set position in the same world on move.
 
 ## Example Usage
 
@@ -82,7 +145,7 @@ public class Core extends JavaPlugin implements Listener {
   @EventHandler
   public void onRTK(PlayerRTKEvent e)
   {
-    
+    e.getPlayer().sendMessage("You are no longer AFK!");
   }
   
 }
