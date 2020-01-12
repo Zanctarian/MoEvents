@@ -95,12 +95,6 @@ Set the reason for why the player got kicked. Color codes supported.
 ```String getReason()```
 Get the reason for the player being kicked.
 
-```setCancelled(boolean cancel)```
-Cancel the player from being kicked.
-
-```isCancelled()```
-Check if the event is cancelled.
-
 ##
 
 ### PlayerRTKEvent
