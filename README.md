@@ -1,5 +1,5 @@
 # Mo' Events!
-Mo' Events is an upcoming API coded very strongly by myself. This API allows you to use more events in Spigot that may not have existed before. The API itself will not be uploaded on GitHub due to me selling it. However, this ReadME will serve as a guide to use it.
+Mo' Events is an upcoming API coded very strongly by myself for Spigot 1.8 through 1.15.1. This API allows you to use more events in Spigot that may not have existed before. The API itself will not be uploaded on GitHub due to me selling it. However, this ReadME will serve as a guide to use it.
 
 ## How to Acquire the API
 In order to acquire the API, you must buy it through me. Currently, it's not available for sale as it's being worked on. However, when it is, this documentation will be updated with instructions.
