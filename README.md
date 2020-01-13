@@ -4,6 +4,26 @@ Mo' Events is an upcoming API coded very strongly by myself for Spigot 1.8 throu
 ## How to Acquire the API
 In order to acquire the API, you must buy it through me. Currently, it's not available for sale as it's being worked on. However, when it is, this documentation will be updated with instructions.
 
+## Contents
+
+1. [Getting Started](#getting-started)
+2. [API Settings](#api-settings)
+3. [Events](#list-of-supported-events)
+    - [PlayerAFKEvent](#playerafkevent)
+    - [PlayerAFKKickEvent](#playerafkkickevent-cancellable)
+    - [PlayerRTKEvent](#playerrtkevent)
+    - [PlayerSyncMoveEvent](#playersyncmoveevent-cancellable)
+    - [PlayerEquipArmorEvent](#playerequiparmorevent-cancellable)
+    - [PlayerUnequipArmorEvent](#playerunequiparmorevent-cancellable)
+    - [PlayerSwimEvent](#playerswimevent)
+    - [PlayerJumpEvent](#playerjumpevent-cancellable)
+    - [PlayerCompleteJumpEvent](#playercompletejumpevent)
+    - [PlayerFallEvent](#playerfallevent)
+    - [PlayerLandEvent](#playerlandevent)
+    - [PlayerPingChangeEvent](#playerpingchangeevent)
+    - [ServerTPSChangeEvent](#servertpschangeevent)
+4. [Example Usage](#example-usage)
+
 ## Getting Started
 To get started with using this API, you must first add it to your library. You can either import an external jar or use maven to import it. When you buy the jar, you'll have access to the maven information with the jar download. The source code is provided with the jar as well so you can simply read the pom.xml too. 
 
